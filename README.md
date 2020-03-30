@@ -1,8 +1,14 @@
 ##    Unit 04 Web APIs Homework: Code Quiz
+## https://victoriaarda.github.io/codeQuiz/
 
 
 
-## When starting the game, the user is presented with a question with 4 multiple choice answers to choose from.
+## When starting the game you will have 3 game option 
+.HTML
+.CSS
+.JavaScript 
+
+## After countdown finish after 3 second , the user is presented with a question with 4 multiple choice answers to choose from.
 
 ## Choosing a correct answer adds five seconds to the game timer. Choosing an incorrect answer deducts fifteen seconds from the game timer.
 
