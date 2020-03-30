@@ -11,37 +11,47 @@ var corrResp;
 var questions;
 
 var HTML = [
-    { q: "Which option allows you to add a message when creating the commit?", r: ["git commit -m", "git commit -a", "git commit -e", "git add -c"], a: "0" },
-    { q: "What is the command used to download a local copy of your repository from the remote?", r: ["git fetch", "git copy", "git clone", "git pull"], a: "2" },
-    { q: "Which command would you use to create a new branch called my-feature in your local copy of the repository?", r: ["git branch -n my-feature", "git checkout -b my-feature", "git checkout my-feature", "git branch --all"], a: "1" },
-    { q: "Which command would you use to update your local copy of a repository with changes from the remote?", r: ["git fetch", "git clone", "git update", "git pull"], a: "3" },
-    { q: "Which command allows you to see information about a specific commit?", r: ["git history", "git log", "git show", "git commit"], a: "2" },
-    { q: "Which of the following allows you to see the current state of your git repository?", r: ["git state", "git show --all", "git status", "git update"], a: "2" },
-    { q: "Which of the following represents the most common order of operations with git?", r: ["git add, git commit, git push", "git pull, git clone, git push", "git commit, git add, git revert", "git reset, git commit, git add"], a: "0" },
-    { q: "If I want to continue working on a branch created on the remote (e.g. GitHub.com) called new-feature, which command would I use?", r: ["git branch new-feature", "git checkoug -b new-feature", "git remote new-feature", "git checkout new-feature"], a: "3" },
-    { q: "If I want to see the url for the remote repository, which command would I use?", r: ["git clone", "git remote -v", "git show --remote", "git clone --show"], a: "1" }
+    { q: "HTML stands for?", r: ["HyperText Markup Language", "HyperText Media Language", "Hyper Markup Language", "HyperText Method Language"], a: "0" },
+    { q: "In HTML all tags come in pair?", r: ["YES", "NO"], a: "1" },
+    { q: "Hyperlink tag can be applied to", r: ["text", "image", "video", "All"], a: "3" },
+    { q: "Which attributes is used to change the number index in tag?", r: ["type", "header", "change", "value"], a: "3" },
+    { q: "How many links can the tag accept ?", r: ["two", "one", "three", "zero"], a: "1" },
+    { q: "Default size for a text field is around ___________ characters", r: ["14", "12", "13", "15"], a: "2" },
+    { q: "Can an HTML link point to a different section on the SAME page ?", r: ["YES", "NO"], a: "1" },
+    { q: "Can I nest tables within tables? ", r: ["YES", "NO"], a: "0" },
+    { q: "Can I put markup in ALT text?", r: ["YES", "NO"], a: "1" },
+    { q: "What is an iframe?", r: ["Divides the page into 2 sections", "Helps include one webpage into another", "Is used to create ajax frame"], a: "1" }
 ];
 
 var CSS = [
-    { q: "A branch in git can be described as?", r: ["A pointer to the most recent commit in a line of work", "A copy of master", "A deviation from master", "A diff between two commits"], a: "0" },
-    { q: "Which of the following commands can help you create atomic commits when you've forgotten to do so as you work?", r: ["git commit --amend", "git rebase", "git add -p", "git revert"], a: "2" },
-    { q: "Which command allows you to fix up the commit message in your previous commit?", r: ["git commit --fix", "git commit --amend", "git reset --hard", "git cherry-pick"], a: "1" },
-    { q: "Which git command allows you to move a commit from one branch to another?", r: ["git cherry-pick", "git reset", "git revert", "git commit --amend"], a: "0" },
-    { q: "Which of the following best describes the operation of git revert?", r: ["Removes the last commit from your history", "Creates a new commit that is the inverse of the target commit", "Reverts the changes to the code base up to and including the target commit", "Replaces the commit message on the target commit"], a: "1" },
-    { q: "In Git, HEAD refers to:", r: ["The point in time indicated by the file tree that is currently checked out", "The master copy of the repository", "A detached state that indicates you are not on the most recent commit", "The branch you are currently working on"], a: "0" },
-    { q: "Which command could you use to create a second remote for your repository?", r: ["git remote --new", "git remote add", "git clone", "git push --new"], a: "1" },
-    { q: "Git pull is a combination of which two git commands?", r: ["git clone, git unpack", "git clone, git checkout", "git fetch, git merge", "git update, git merge"], a: "2" }
+    { q: "Pseudo-classes In CSS", r: ["Match A Specified Element", "Select The Active Links", "Are Used To Select All The Visited Links", "Are Used To Define A Special State Of An Element"], a: "3" },
+    { q: "Which Event Will Be Used When A Connection To The Server Is Opened.", r: ["Onmessage", "Onopen", "Onerror", "None Of The Above"], a: "1" },
+    { q: "Which Is The Correct CSS Syntax?", r: ["Body:color=black", "{body;color:black}", "{body:color=black(body}", "Body {color: Black}"], a: "3" },
+    { q: "Which CSS Property Is Used For Controlling The Layout?", r: ["Header", "Footer", "Display", "None Of The Above"], a: "2" },
+    { q: "Which CSS Property Sets A Background Image For An Element?", r: ["Background - Color", "Background - Image", "Background - Attachment", "None of These"], a: "1" },
+    { q: "Which Of The Following Properties Will We Use To Display Border Around A Cell Without Any Content ?", r: ["Noncontent-cell", "Blank-cell", "Empty-cell", "Void-cell"], a: "2" },
+    { q: "What Should Be The Table Width, So That The Width Of A Table Adjust To The Current Width Of The Browser Window?", r: ["640 Pixels", "100.00%", "Full-screen", "1024 Px"], a: "1" },
+    { q: "How Can We Write Comment Along With CSS Code ? ", r: [" / A Comment /", "// A Comment //", " /* A Comment */", "<' A Comment'>"], a: "2" },
+    { q: "Which CSS Property Is Used To Control The Text Size Of An Element ?", r: ["Font-style", "Font-size", "Text-size", "Text-style"], a: "1" },
+
 ];
 
+
 var javaScript = [
-    { q: "Which of the following commands will allow you to pull a git repository as a dependency of your current repository?", r: ["git rerere", "git rebase", "git join", "git subtree"], a: "3" },
-    { q: "Which of the following best describes a git commit?", r: ["A diff of a repository showing the work you've completed", "A snapshot of the content of the repository at a point in time", "A changeset", "All of the above"], a: "1" },
-    { q: "Git's internal file structure is best described as a:", r: ["Directed Acyclic Graph", "Linked List", "Directed Acyclic Graph stored as a linked list", "None of the above"], a: "2" },
-    { q: "Git bisect can be used to:", r: ["Cut down the size of your repository to make it quicker to clone", "Divide an existing commit into smaller parts", "Remove unwanted contents from your repository", "Locate regressions in your code base"], a: "3" },
-    { q: "Which of the following can help you resolve complex merge conflicts in long running branches?", r: ["git merge --trial", "git merge-with-lease", "git rerere", "git merge --ours"], a: "2" },
-    { q: "Which mode of reset will cause your changes to appear in your staging directory?", r: ["git reset --hard", "git reset --mixed", "git reset --soft", "git reset --undo"], a: "2" },
-    { q: "Which command can be used to locate local commits that have otherwise been removed from history?", r: ["git rerere", "git reflog", "git log", "git history"], a: "1" }
+    { q: "What is the HTML tag under which one can write the JavaScript code?", r: ["<javascript>", "<scripted>", "<script>", "<js>"], a: "2" },
+    { q: "Which of the following is the correct syntax to display 'Hello' in an alert box using JavaScript?", r: ["alertbox('Hello');", "{msg('Hello');", "msgbox('Hello');", "alert('Hello');"], a: "3" },
+    { q: "What is the correct syntax for referring to an external script called 'main.js'?", r: ["<script src='main.js'>", " <script href='main.js'>", " <script ref='main.js'>", " <script name='main.js'>"], a: "0" },
+    { q: "The external JavaScript file must contain <script> tag. True or False?", r: ["True", "False"], a: "1" },
+    { q: "Which of the following is not a reserved word in JavaScript?", r: ["interface", "throws", "program", "short"], a: "2" },
+    { q: "How is the function called in JavaScript?", r: ["call MainFunc();", "call function MainFunc();", "MainFunc();", "function MainFunc();"], a: "2" },
+    { q: "How to write an 'if' statement for executing some code.If 'i' is NOT equal to 8? ", r: ["if(i<>5)", "if i<>5", "if(i!=5)", "if i!=5"], a: "2" },
+    { q: "What is the JavaScript syntax for printing values in Console?", r: ["print(5)", "console.log(5);", "console.print(5);", "print.console(5);"], a: "1" },
+    { q: "What is the method in JavaScript used to remove the whitespace at the beginning and end of any string ?", r: ["strip()", "trim()", "stripped()", "trimmed()"], a: "1" },
+    { q: "What is the correct syntax for adding comments in JavaScript?", r: ["<!–This is a comment–&gt", "//This is a comment", "-This is a comment", "**This is a comment**"], a: "1" }
+
 ];
+
+
 
 
 function initialSetup() {
