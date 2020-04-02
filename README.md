@@ -10,7 +10,6 @@
 
 ## After countdown finish after 3 second , the user is presented with a question with 4 multiple choice answers to choose from.
 
-## Choosing a correct answer adds five seconds to the game timer. Choosing an incorrect answer deducts fifteen seconds from the game timer.
 
 ## Each game allows for 150 seconds of play. The game is over when the user answers all ten questions or the timer runs out.
 
